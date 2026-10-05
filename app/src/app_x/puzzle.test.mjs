@@ -41,7 +41,10 @@ test('the published hint contains the intended nested clues only after decoding'
   for (const spoiler of ['K Callan', 'Knives Out', 'Laurence Fishburne', 'The Matrix', 'Morpheus', 'Neo', 'karate', 'kung fu', 'kungfu', 'kung-fu']) {
     assert.ok(!hintNarrative.includes(spoiler), spoiler)
   }
-  const outer = decode(hintNarrative.split('b64:')[1])
+  const blocks = [...hintNarrative.matchAll(/b64:([A-Za-z0-9+/=]+)/g)].map(match => decode(match[1]))
+  assert.equal(blocks[0], "the recurring person's identity")
+  assert.equal(blocks[1], 'which person keeps appearing')
+  const outer = blocks[2]
   assert.ok(outer.includes('makes the row uniquely green'))
   assert.ok(outer.includes('are yellow; remaining routes are pink'))
   assert.ok(outer.includes('K Callan and b64:S25pdmVzIE91dA== are red herrings.'))
