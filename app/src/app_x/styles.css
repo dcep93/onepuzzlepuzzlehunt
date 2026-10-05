@@ -35,7 +35,7 @@
 .begin-button { min-width: 8rem; font-size: 1.2rem; }
 .puzzle-content { max-width: 52rem; margin-inline: auto; }
 .puzzle-images { display: grid; grid-template-columns: minmax(0, 1fr) minmax(7rem, .35fr); gap: 1.5rem; align-items: center; margin-bottom: 2rem; padding: 1.25rem; border: .0625rem solid var(--border); border-radius: 1rem; background: var(--surface); }
-.puzzle-constellation { width: 100%; max-height: 22rem; object-fit: contain; }
+.puzzle-constellation { display: block; width: 100%; height: auto; max-height: 22rem; }
 .puzzle-poster { width: 100%; max-height: 20rem; object-fit: contain; border-radius: .25rem; }
 .puzzle-narrative { margin: 0 0 2rem; padding-left: 1.25em; }
 .puzzle-narrative li { margin-bottom: .9em; padding-left: .25em; }

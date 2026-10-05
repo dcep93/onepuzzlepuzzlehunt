@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { hintNarrative, isCorrectAnswer } from './puzzle'
 import { navigate, rememberSolved } from './navigation'
+import Constellation from './constellation'
 
 export default function PuzzlePage() {
   const [answer, setAnswer] = useState('')
@@ -19,7 +20,7 @@ export default function PuzzlePage() {
   return (
     <div className="puzzle-content">
       <div className="puzzle-images">
-        <img className="puzzle-constellation" src="/puzzle/constellation.png" alt="Five tan stars and a blue arrow pointing diagonally upward to the left." />
+        <Constellation className="puzzle-constellation" />
         <img className="puzzle-poster" src="/puzzle/fast_break.jpg" alt="Fast Break (1979) film poster" />
       </div>
       <ul className="puzzle-narrative">
