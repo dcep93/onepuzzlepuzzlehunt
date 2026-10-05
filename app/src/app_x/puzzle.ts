@@ -1,7 +1,8 @@
 export type HuntView = 'home' | 'puzzle' | 'epilogue'
 
 export function isCorrectAnswer(answer: string): boolean {
-  return answer.trim().toLowerCase() === 'karate'
+  const normalized = answer.trim().toLowerCase()
+  return normalized === 'karate' || normalized === 'kung fu'
 }
 
 export function resolveView(pathname: string, solved: boolean): HuntView {

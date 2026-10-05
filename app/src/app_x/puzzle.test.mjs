@@ -6,11 +6,11 @@ function decode(value) {
   return new TextDecoder().decode(Uint8Array.from(atob(value), character => character.charCodeAt(0)))
 }
 
-test('accepts the six-letter answer regardless of casing and surrounding whitespace', () => {
-  for (const answer of ['karate', 'KARATE', 'KaRaTe', ' karate\n']) {
+test('accepts karate and kung fu regardless of casing and surrounding whitespace', () => {
+  for (const answer of ['karate', 'KARATE', 'KaRaTe', ' karate\n', 'kung fu', 'KUNG FU', 'KuNg Fu', ' kung fu\n']) {
     assert.equal(isCorrectAnswer(answer), true)
   }
-  for (const answer of ['', 'kung fu', 'karate!', 'kar ate', 'The Matrix']) {
+  for (const answer of ['', 'karate!', 'kar ate', 'kung fu!', 'The Matrix']) {
     assert.equal(isCorrectAnswer(answer), false)
   }
 })
