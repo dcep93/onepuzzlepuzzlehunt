@@ -35,7 +35,7 @@ export default function BernsteinStory({ revealed, unlocked, onReveal, onUnlock 
                 <span className="history-poster-number" aria-hidden="true">{index + 1}</span>
                 <h4>{step.title}</h4>
                 <div className="history-poster-illustration">{step.picture === 'prison'
-                  ? <img className="history-poster-portrait" src={`/puzzle/${bernsteinPortrait}`} width={292} height={371} alt="Ossip Bernstein in 1909" loading="eager" decoding="sync" />
+                  ? <img className="history-poster-portrait" src={`/puzzle/${bernsteinPortrait}`} width={720} height={480} alt="Ossip Bernstein seated at a chessboard" loading="eager" decoding="sync" />
                   : <StoryPicture scene={step.picture} />}</div>
                 <p>{step.text}</p>
               </li>
@@ -45,7 +45,7 @@ export default function BernsteinStory({ revealed, unlocked, onReveal, onUnlock 
             <p className="history-poster-moral-title"><span aria-hidden="true">★</span> CHESS: POSSIBLY A SURVIVAL SKILL</p>
             <p>Bernstein’s victory convinced the officer. He spared Bernstein and the other prisoners from the firing squad, sending them back to prison. They were later released. Bernstein had played for his life—and won.</p>
           </div>
-          <p className="history-poster-source">As told by Edward Lasker in <cite>Chess Review</cite>, April 1963. <a href="https://en.chessbase.com/newsroom/post/ossip-bernstein-september-20-1882-november-30-1962-the-last-star-of-chess-golden-age" target="_blank" rel="noopener noreferrer">Read the account</a>. Portrait: <a href="https://commons.wikimedia.org/wiki/File:Ossip_Bernstein.JPG" target="_blank" rel="noopener noreferrer">St. Petersburg, 1909</a> (public domain).</p>
+          <p className="history-poster-source">As told by Edward Lasker in <cite>Chess Review</cite>, April 1963. <a href="https://en.chessbase.com/newsroom/post/ossip-bernstein-september-20-1882-november-30-1962-the-last-star-of-chess-golden-age" target="_blank" rel="noopener noreferrer">Read the account</a>. Portrait: <a href="https://en.chessbase.com/Portals/all/thumbs/105/105623.jpeg" target="_blank" rel="noopener noreferrer">ChessBase</a>.</p>
         </article>
         <p className="bernstein-story-teaser">Why does memorizing this constellation help me in chess?</p>
         {!unlocked && <div className="bernstein-reveal-controls">

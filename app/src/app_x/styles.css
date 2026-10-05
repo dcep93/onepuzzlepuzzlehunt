@@ -92,7 +92,7 @@
 .history-poster h4 { display: grid; align-content: center; min-height: 3em; margin: .6rem 0; font: 900 1.15rem/1.2 'Arial Narrow', Arial, sans-serif; text-transform: uppercase; }
 .history-poster-illustration { display: grid; grid-template-rows: minmax(0, 1fr); place-items: center; height: 9rem; margin: .6rem auto; }
 .history-poster-picture { display: block; width: 100%; height: 100%; }
-.history-poster-portrait { display: block; min-height: 0; width: auto; height: 100%; max-width: 100%; object-fit: contain; border: .125rem solid var(--ink); }
+.history-poster-portrait { display: block; min-height: 0; width: 7.2rem; height: 100%; max-width: 100%; object-fit: cover; object-position: 65% center; border: .125rem solid var(--ink); }
 .history-poster-steps p { font-size: 1rem; line-height: 1.45; text-align: left; }
 .history-poster-steps li + li::before { content: '➜'; position: absolute; left: -1.6rem; top: 8.5rem; font: 900 1.8rem Arial, sans-serif; color: #777650; }
 .history-poster-moral { padding: 1em; border: .2rem solid #727440; color: #55572b; text-align: left; font: 400 .95rem/1.5 Georgia, serif; }
