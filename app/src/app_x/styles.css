@@ -125,5 +125,25 @@
   .epilogue-images, .epilogue-images figure, .epilogue-images-trio figure { height: auto; }
   .epilogue-images img { height: auto; }
   .epilogue-images-pair { grid-template-columns: 1fr; }
-  .epilogue-slide-dojo { padding-bottom: 2rem; }
+}
+
+/* Keep mobile navigation in its own row, outside the only scrolling area. */
+@media (max-width: 50rem), (max-height: 35rem) and (pointer: coarse) {
+  .hunt-epilogue { height: 100svh; height: 100dvh; min-height: 0; padding: 0; overflow: hidden; }
+  .hunt-epilogue .hunt-content { display: flex; flex-direction: column; height: 100%; min-height: 0; }
+  .hunt-epilogue .hunt-header { flex: none; margin: 0; padding: max(1rem, env(safe-area-inset-top, 0rem)) 1.25rem .75rem; }
+  .hunt-epilogue .hunt-eyebrow { margin-bottom: .4rem; }
+  .hunt-epilogue h1 { font-size: 1.65rem; }
+  .epilogue { flex: 1; min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; }
+  .epilogue-viewport { min-height: 0; overflow-y: auto; overscroll-behavior-y: contain; overflow-anchor: none; padding: 1rem max(1.25rem, env(safe-area-inset-right, 0rem)) 2.5rem max(1.25rem, env(safe-area-inset-left, 0rem)); scroll-padding-block: 1rem 2.5rem; }
+  .epilogue-viewport:focus-visible { outline: .15rem solid var(--pink); outline-offset: -.25rem; }
+  .epilogue-stage { height: auto; min-height: 100%; align-items: start; }
+  .epilogue-slide { height: auto; grid-template-rows: auto; }
+  .epilogue-images, .epilogue-images figure, .epilogue-images-trio figure, .epilogue-images img { height: auto; }
+  .epilogue-controls { position: static; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: .75rem; min-height: 0; padding: .75rem max(1rem, env(safe-area-inset-right, 0rem)) calc(.75rem + env(safe-area-inset-bottom, 0rem)) max(1rem, env(safe-area-inset-left, 0rem)); background: #140f0c; backdrop-filter: none; }
+  .epilogue-controls .hunt-button { min-width: 0; min-height: 3rem; height: 100%; padding: .6em .75em; font-size: .95rem; }
+}
+@media (max-height: 30rem) and (pointer: coarse) {
+  .hunt-epilogue .hunt-header { padding-top: .5rem; padding-bottom: .5rem; }
+  .hunt-epilogue h1 { font-size: 1.35rem; }
 }
