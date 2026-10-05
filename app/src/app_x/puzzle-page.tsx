@@ -23,12 +23,11 @@ export default function PuzzlePage() {
         <img className="puzzle-poster" src="/puzzle/fast_break.jpg" alt="Fast Break (1979) film poster" />
       </div>
       <ul className="puzzle-narrative">
-        <li>This constellation evokes in my mind a particular scene from an extremely popular movie.</li>
-        <li>That constellation might save your life!</li>
         <li>This puzzle is centered around a different obscure film from 1979 called &quot;Fast Break&quot;.</li>
-        <li>Don't cheat, look things up, or use tools beyond the puzzle minigame linked below. You don't need to know anything at all about Fast Break. The minigame hides some information about Fast Break that might spoil the puzzle.</li>
+        <li>This constellation might save your life! It evokes in my mind a particular scene from an extremely popular movie, different from Fast Break, which is of course not popular.</li>
+        <li>Don't cheat, look things up, or use tools beyond the specific puzzle minigame linked below. You don't need to know anything at all about Fast Break.</li>
         <li>I made a tool, bacondegrees420, which is a fun way to find the shortest path connection between any two items: films, cast or crew.</li>
-        <li>Visit <a href="https://bacondegrees420.web.app?puzzle" target="_blank" rel="noopener noreferrer">bacondegrees420.web.app?puzzle</a> - then, type in the box and submit to explore connections to Fast Break.</li>
+        <li>Visit <a href="https://bacondegrees420.web.app/?puzzle" target="_blank" rel="noopener noreferrer">bacondegrees420.web.app?puzzle</a> - then, type in the box and submit to explore connections to Fast Break. Be sure to use this and not the normal bacondegrees420 app, since that would spoil the puzzle.</li>
         <li>You will use this minigame to discover my 6 letter secret scene, which will help you memorize the constellation.</li>
       </ul>
       <form className="answer-form" onSubmit={submitAnswer}>
