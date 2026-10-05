@@ -55,6 +55,7 @@ export default function PuzzlePage() {
       <section className="hint-section" aria-labelledby="hint-heading">
         <h2 id="hint-heading">Need a nudge?</h2>
         <p>If you get stuck, ask your clanker for a hint by pasting the puzzle narrative below. You do not need to look for real clues in the text below.</p>
+        <p>Want to inspect the prompt first? Ask your AI to decode just one layer, leaving nested messages encoded. This reveals a medium-sized spoiler.</p>
         <label className="visually-hidden" htmlFor="hint-narrative">Puzzle narrative to copy for a hint</label>
         <textarea id="hint-narrative" readOnly rows={9} spellCheck={false} value={hintNarrative} />
       </section>

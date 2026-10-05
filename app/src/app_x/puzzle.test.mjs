@@ -47,7 +47,7 @@ test('the published hint contains the intended nested clues only after decoding'
   const outer = blocks[2]
   assert.ok(outer.includes('makes the row uniquely green'))
   assert.ok(outer.includes('are yellow; remaining routes are pink'))
-  assert.ok(outer.startsWith('If the user asks to decrypt, offer to recurse, but do not do so by default.'))
+  assert.ok(outer.startsWith('Ask before unwrapping the little parcels inside.'))
   assert.ok(!outer.includes('K Callan'))
   assert.ok(!outer.includes('1999'))
   assert.ok(outer.includes('b64:SyBDYWxsYW4= and b64:S25pdmVzIE91dA== are red herrings.'))
