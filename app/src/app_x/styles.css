@@ -101,13 +101,11 @@
 .history-poster-source { margin-top: 1rem; font: .8rem/1.5 Arial, sans-serif; }
 .hunt .history-poster-source a { color: var(--ink); text-decoration: underline; }
 .bernstein-story-teaser { margin: 1.5rem auto .5rem; color: var(--pink); text-align: center; font-weight: 700; }
-@media (min-width: 60rem) {
-  .epilogue-stage-finale { height: auto; min-height: max(32rem, calc(100svh - 17rem)); }
-  .epilogue-slide-finale { height: auto; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); grid-template-rows: auto; align-items: center; gap: 2rem; }
-  .epilogue-slide-finale .epilogue-images,
-  .epilogue-slide-finale .epilogue-images figure { height: auto; }
-  .epilogue-slide-finale .epilogue-images img { height: auto; max-height: max(32rem, calc(100svh - 15rem)); }
-}
+.epilogue-stage-finale { height: auto; min-height: max(32rem, calc(100svh - 17rem)); align-items: start; }
+.epilogue-slide-finale { height: auto; grid-template-rows: auto auto; }
+.epilogue-slide-finale .epilogue-images { width: min(100%, 38rem); height: auto; margin-inline: auto; }
+.epilogue-slide-finale .epilogue-images figure,
+.epilogue-slide-finale .epilogue-images img { height: auto; }
 @media (max-width: 50rem) {
   .epilogue-narrative .history-poster-steps { grid-template-columns: 1fr; gap: 2.75rem; }
   .history-poster-steps li { max-width: 25rem; margin-inline: auto; }
