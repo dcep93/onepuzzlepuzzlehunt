@@ -22,8 +22,29 @@ npm run build    # TypeScript check and production build
 npm run preview  # Preview the production build locally
 ```
 
-The production output is `app/dist/`. GitHub Actions runs lint and build for
-pushes to `main` and pull requests. Hosting is not configured yet.
+The production output is `app/dist/`. GitHub Actions records build metadata,
+installs locked dependencies, runs lint, and builds on pushes to `main` and pull
+requests. Successful pushes to `main` also deploy to Firebase Hosting using the
+repository's `SA_KEY` secret. The workflow can be run manually on `main` as well.
+
+## Deployment
+
+The Firebase project is `onepuzzlepuzzlehunt` and its Hosting URL is
+<https://onepuzzlepuzzlehunt.web.app>.
+
+The usual split scripts live in `.github/workflows/`:
+
+- `record_sha.sh`: writes the build time and latest commit to
+  `app/src/app_x/config/sha_x.json`; `getShaX()` exposes it to app code.
+- `build_react.sh`: installs dependencies with `npm ci`, lints, and builds.
+- `deploy_to_firebase.sh`: checks the service account's project, generates
+  Hosting-only configuration, and deploys `app/dist`. Credentials are passed
+  through `SA_KEY` and stored in a temporary file removed when the script exits.
+
+One-time Firebase and service-account setup commands are included as comments
+in `deploy_to_firebase.sh`. The GitHub secret must contain the service account's
+complete JSON key. An existing `SA_KEY` can be reused; no new key is needed if
+it belongs to this project and has Firebase Hosting deployment permissions.
 
 ## Organization
 
@@ -32,7 +53,7 @@ pushes to `main` and pull requests. Hosting is not configured yet.
 - `app/src/main.tsx`: React entrypoint.
 - `app/src/index.css`: shared reset and base typography.
 - `app/public/`: static assets, including the favicon.
-- `.github/workflows/ci.yml`: build and lint checks.
+- `.github/workflows/workflow.yaml`: build, lint, and Firebase deployment.
 
 The `--tan`, `--pink`, and `--display-font` CSS variables in
 `app/src/app_x/styles.css` define the reusable theme. Headings prefer Comic Sans

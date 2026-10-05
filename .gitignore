@@ -4,3 +4,8 @@
 .env.*
 !.env.example
 gac.json
+SA_KEY.json
+app/firebase.json
+app/.firebaserc
+app/.firebase/
+app/firebase-debug*.log
