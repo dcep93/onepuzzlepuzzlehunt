@@ -4,7 +4,7 @@ export const epilogueCopy: Record<string, ReactNode> = {
   congratulations: <ul>
     <li>Congratulations, you finished the puzzle hunt!</li>
     <li>Fast Break's most notable connection is Laurence Fishburne, hinting towards The Matrix, which is that popular movie I was looking for.</li>
-    <li>Specifically The Matrix's connection row is uniquely colored gold. Connections through Laurence Fishburne are colored green, and other connections are colored red.</li>
+    <li>Specifically The Matrix's connection row is uniquely colored green. Other connections through Laurence Fishburne are colored yellow, and the remaining connections are colored pink.</li>
   </ul>,
   'red-herring': <p>Perhaps, you considered thematically exploring one of the Rian Johnson mystery films, but that would've connected you to Fast Break via K Callan, a red herring! In case you don't remember her character by name, she played Greatnana Wanetta in Knives Out.</p>,
   'dojo-answer': <p>Once you lock in on The Matrix, you need to find the scene associated with the constellation. Of course, I'm talking about the scene Neo and Morpheus fight in the dojo! Either "karate" or "kung fu" were acceptable answers.</p>,

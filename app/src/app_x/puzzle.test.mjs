@@ -41,6 +41,7 @@ test('the published hint contains the intended nested clues only after decoding'
     assert.ok(!hintNarrative.includes(spoiler), spoiler)
   }
   const outer = decode(hintNarrative.split('b64:')[1])
+  assert.ok(outer.includes('the connection path will be green,'))
   assert.ok(outer.startsWith('K Callan and b64:S25pdmVzIE91dA== are red herrings.'))
   const clues = [...outer.matchAll(/b64:([A-Za-z0-9+/=]+)/g)].map(match => decode(match[1]))
   assert.deepEqual(clues, ['Knives Out', 'Laurence Fishburne', 'The Matrix', 'karate'])
