@@ -2,7 +2,7 @@ import StoryPicture from './story-picture'
 import { bernsteinPortrait } from './epilogue-assets'
 
 const steps = [
-  { title: 'Arrested!', picture: 'prison', text: 'After the Russian Revolution, chess master and lawyer Ossip Bernstein was arrested by the Bolshevik secret police. He faced a firing squad.' },
+  { title: 'Arrested!', picture: 'prison', text: 'In the aftermath of the Russian Revolution, chess master and lawyer Ossip Bernstein was arrested in Odessa by the Bolshevik secret police. He faced a firing squad.' },
   { title: 'Wait. THAT Bernstein?', picture: 'name', text: 'An officer spotted his name. Was this really the famous chess master? There was one way to find out.' },
   { title: 'A game for his life', picture: 'chess', text: 'The officer demanded a game. Bernstein had to prove his chess skill—with his life at stake. He won quickly.' },
 ] as const
