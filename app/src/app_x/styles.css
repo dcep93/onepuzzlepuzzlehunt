@@ -98,10 +98,7 @@
 .history-poster-moral { padding: 1em; border: .2rem solid #727440; color: #55572b; text-align: left; font: 700 1.05rem/1.55 Georgia, serif; }
 .history-poster-source { margin-top: 1rem; font: .8rem/1.5 Arial, sans-serif; }
 .hunt .history-poster-source a { color: var(--ink); text-decoration: underline; }
-.bernstein-story-teaser { margin: 1.5rem auto .5rem; padding: 1rem 1.25rem; border: .125rem solid var(--pink); border-radius: .5rem; background: #ff7bc314; text-align: center; }
-.bernstein-story-teaser p { margin: .3rem 0; }
-.bernstein-story-teaser strong, .bernstein-story-continue { color: var(--pink); }
-.bernstein-story-continue { font: 700 1.4rem var(--display-font); }
+.bernstein-story-teaser { margin: 1.5rem auto .5rem; color: var(--pink); text-align: center; font-weight: 700; }
 @media (min-width: 60rem) {
   .epilogue-stage-finale { height: auto; min-height: max(32rem, calc(100svh - 17rem)); }
   .epilogue-slide-finale { height: auto; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); grid-template-rows: auto; align-items: center; gap: 2rem; }
