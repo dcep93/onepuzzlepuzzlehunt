@@ -12,7 +12,7 @@ export const epilogueCopy: Record<string, ReactNode> = {
   infographic: <BernsteinStory />,
   'life-saving-game': <ul>
     <li>A few months ago, I was white in this position, with about a minute on the clock, but the game ended in a draw.</li>
-    <li>To test myself, I promoted to a bishop, but couldn't convert to checkmate in such a small time limit.</li>
+    <li>To test myself, I promoted to a bishop, but in the end, I couldn't convert to checkmate in such a small time limit.</li>
   </ul>,
   'overlay-start': <p>If we place the constellation over the chessboard, you can see <a href="https://www.youtube.com/watch?v=oRK7XLhGz_c" target="_blank" rel="noopener noreferrer">Naroditsky's W Maneuver</a>, which I think is the best way to learn the bishop + knight checkmate.</p>,
   'overlay-end': <ul>
