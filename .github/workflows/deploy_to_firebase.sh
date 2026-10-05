@@ -1,62 +1,49 @@
 #!/bin/bash
+
 set -euo pipefail
 
-# One-time setup, if the Firebase project/service account does not exist yet:
-# export GOOGLE_CLOUD_PROJECT=onepuzzlepuzzlehunt
-# gcloud services enable firebase.googleapis.com --project="$GOOGLE_CLOUD_PROJECT"
-# firebase projects:addfirebase "$GOOGLE_CLOUD_PROJECT"
-# gcloud iam service-accounts create deployer-github --project="$GOOGLE_CLOUD_PROJECT"
-# gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" \
-#   --member="serviceAccount:deployer-github@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
-#   --role="roles/firebasehosting.admin"
-# gcloud iam service-accounts keys create gac.json \
-#   --iam-account="deployer-github@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
-#   --project="$GOOGLE_CLOUD_PROJECT"
-# gh secret set SA_KEY --repo dcep93/onepuzzlepuzzlehunt < gac.json
-# Hosting config is generated below; interactive `firebase init` is unnecessary.
+SA_KEY="$1"
 
-SA_KEY="${SA_KEY:-${1:-}}"
-if [[ -z "$SA_KEY" ]]; then
-  echo "Expected service account JSON in SA_KEY or as arg 1." >&2
-  exit 1
-fi
+# set -e
+# gcloud billing projects unlink $GOOGLE_CLOUD_PROJECT
+# gcloud services enable firebase.googleapis.com
+# firebase projects:addfirebase $GOOGLE_CLOUD_PROJECT
+# firebase init hosting --project "$GOOGLE_CLOUD_PROJECT"
+# gcloud iam service-accounts create deployer-github
+# sleep 1
+# gcloud projects add-iam-policy-binding "$GOOGLE_CLOUD_PROJECT" --member="serviceAccount:deployer-github@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" --role="roles/firebasehosting.admin"
+# gcloud iam service-accounts keys create gac.json --iam-account "deployer-github@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com"
+# echo; echo; echo
+# cat gac.json
+# echo; echo; echo
 
-repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-cd "$repo_root/app"
+cd app
 
-if ! printf '%s' "$SA_KEY" | jq -e '
-  type == "object" and .type == "service_account" and
-  ([.project_id, .client_email, .private_key] | all(type == "string" and length > 0))
-' >/dev/null 2>&1; then
-  echo "SA_KEY must contain the complete service-account JSON key file, not a key ID or filename." >&2
-  echo "Update the repository Actions secret: gh secret set SA_KEY --repo dcep93/onepuzzlepuzzlehunt < gac.json" >&2
-  exit 1
-fi
-project_id="$(printf '%s' "$SA_KEY" | jq -er '.project_id')"
-if [[ "$project_id" != "onepuzzlepuzzlehunt" ]]; then
-  echo "Expected an SA_KEY for project onepuzzlepuzzlehunt." >&2
-  exit 1
-fi
-if [[ ! -f dist/index.html ]]; then
-  echo "Build the app before deploying: bash .github/workflows/build_react.sh" >&2
-  exit 1
-fi
+export GOOGLE_APPLICATION_CREDENTIALS="gac.json"
+echo "$SA_KEY" >"$GOOGLE_APPLICATION_CREDENTIALS"
+npm install -g firebase-tools
+gcloud auth activate-service-account --key-file="$GOOGLE_APPLICATION_CREDENTIALS"
+project_id="$(cat $GOOGLE_APPLICATION_CREDENTIALS | jq -r .project_id)"
 
-credential_file="$(mktemp "${TMPDIR:-/tmp}/onepuzzlepuzzlehunt-gac.XXXXXX")"
-trap 'rm -f "$credential_file"' EXIT
-printf '%s' "$SA_KEY" > "$credential_file"
-unset SA_KEY
-export GOOGLE_APPLICATION_CREDENTIALS="$credential_file"
-
-cat > firebase.json <<'EOF'
+cat <<EOF2 >firebase.json
 {
-  "hosting": {
-    "public": "dist",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
-    "rewrites": [{"source": "**", "destination": "/index.html"}]
-  }
+    "hosting": {
+        "public": "dist",
+        "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+        "rewrites": [{
+            "source": "**",
+            "destination": "/index.html"
+        }]
+    }
 }
-EOF
+EOF2
 
-jq -n --arg project "$project_id" '{projects: {default: $project}}' > .firebaserc
-npx --yes firebase-tools@15.32.1 deploy --only hosting --project "$project_id" --non-interactive
+cat <<EOF2 >.firebaserc
+{
+    "projects": {
+        "default": "$project_id"
+    }
+}
+EOF2
+
+firebase deploy --project "$project_id"

@@ -1,34 +1,22 @@
-name: Build and deploy
-
 on:
-  workflow_dispatch:
   push:
-    branches: [main]
-  pull_request:
-
-permissions:
-  contents: read
-
-concurrency:
-  group: build-deploy-${{ github.ref }}
-  cancel-in-progress: false
-
+    branches:
+      - main
 jobs:
   workflow:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@v3
+
+      - name: cache
+        uses: actions/cache@v4
         with:
-          node-version: 22
-          cache: npm
-          cache-dependency-path: app/package-lock.json
-      - name: Record build metadata
-        run: bash .github/workflows/record_sha.sh
-      - name: Build React app
-        run: bash .github/workflows/build_react.sh
-      - name: Deploy to Firebase Hosting
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-        env:
-          SA_KEY: ${{ secrets.SA_KEY }}
-        run: bash .github/workflows/deploy_to_firebase.sh
+          path: |
+            app/node_modules
+          key: v1
+          restore-keys: |
+            v1
+
+      - run: bash .github/workflows/record_sha.sh
+      - run: bash .github/workflows/build_react.sh
+      - run: bash .github/workflows/deploy_to_firebase.sh '${{ secrets.SA_KEY }}'
