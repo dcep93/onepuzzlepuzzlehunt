@@ -27,7 +27,6 @@ export const slides: EpilogueSlide[] = [
   { id: 'life-saving-game', images: [{ file: 'life_saving_game_screenshot.png', alt: 'The chess position from the life-saving game.' }] },
   { id: 'overlay-start', images: [{ file: 'overlay_start.png', alt: 'Morpheus and the constellation overlaid on a chessboard.' }] },
   { id: 'overlay-end', images: [{ file: 'overlay_end.png', alt: 'The constellation as a memory aid for the knight and bishop endgame. Open the endgame to play.' }], href: chessHref },
-  { id: 'thanks', images: [] },
 ]
 
 export const slideImageFiles = [...new Set(slides.flatMap(slide => slide.images.map(image => image.file)))]

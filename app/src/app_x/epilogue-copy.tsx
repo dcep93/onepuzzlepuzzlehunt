@@ -14,7 +14,7 @@ export const epilogueCopy: Record<string, ReactNode> = {
     <li>To test myself, I promoted to a bishop, but couldn't convert to checkmate in such a small time limit.</li>
   </ul>,
   'overlay-start': <p>If we place the constellation over the chessboard, you can see <a href="https://www.youtube.com/watch?v=oRK7XLhGz_c" target="_blank" rel="noopener noreferrer">Naroditsky's W Maneuver</a>, which I think is the best way to learn the bishop + knight checkmate.</p>,
-  thanks: <ul>
+  'overlay-end': <ul>
     <li>Thanks for playing!</li>
     <li>From here, all that's left to do is to practice the checkmate, in case you find yourself in the Russian Revolution, or similar.</li>
     <li>I made another tool, <a href="https://lottaendgames.web.app/mate/bishop-knight" target="_blank" rel="noopener noreferrer">lottaendgames.web.app</a> where you can practice different checkmating patterns.</li>
