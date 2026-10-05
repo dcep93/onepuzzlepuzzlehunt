@@ -17,7 +17,7 @@ export const slides: EpilogueSlide[] = [
   },
   {
     id: 'dojo-answer',
-    images: [morpheus],
+    images: [morpheus, { file: 'constellation.png?v=2', alt: 'Five tan stars and a blue arrow pointing diagonally upward to the left.' }],
   },
   { id: 'infographic', images: [] },
   { id: 'life-saving-game', images: [{ file: 'life_saving_game_screenshot.png', alt: 'The chess position from the life-saving game.' }] },

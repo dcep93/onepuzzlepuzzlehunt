@@ -68,6 +68,7 @@
 .epilogue-narrative li::marker { color: var(--tan); }
 .hunt .epilogue-slide-title { color: var(--pink); font-weight: 700; text-align: center; }
 .epilogue-images { display: grid; min-height: 0; width: 100%; height: 100%; }
+.epilogue-images-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 .epilogue-images-trio { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.5rem, 2vw, 1.5rem); max-width: 48rem; margin-inline: auto; }
 .epilogue-images figure { display: grid; grid-template-rows: minmax(0, 1fr); min-width: 0; min-height: 0; margin: 0; }
 .epilogue-images-trio figure { height: min(100%, 26rem); align-self: center; }
@@ -77,17 +78,33 @@
 .epilogue-slide-story .epilogue-narrative { width: min(100%, 64rem); }
 .epilogue-stage-story { height: auto; min-height: max(32rem, calc(100svh - 17rem)); }
 .epilogue-slide-story { height: auto; }
-.bernstein-story { display: grid; gap: 1.25rem; }
+.bernstein-story { display: grid; gap: 1.5rem; }
 .bernstein-story-heading { max-width: 60ch; margin-inline: auto; text-align: center; }
-.bernstein-story-setting { margin-top: .9rem; color: var(--tan); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; }
-.bernstein-story-heading h3 { margin-block: .3rem .6rem; font-family: var(--display-font); font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.2; }
-.epilogue-narrative .bernstein-story-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin: 0; padding: 0; list-style: none; counter-reset: story; }
-.epilogue-narrative .bernstein-story-steps li { margin: 0; padding: 1.25rem; border: .0625rem solid var(--border); border-top: .1875rem solid var(--pink); border-radius: .75rem; background: var(--surface); counter-increment: story; }
-.bernstein-story-steps li::before { content: '0' counter(story); color: var(--pink); font: 700 1.1rem var(--display-font); }
-.bernstein-story-steps h4 { margin-block: .5rem; color: var(--tan); font-size: 1.1rem; line-height: 1.3; }
-.bernstein-story-steps p { font-size: 1rem; }
-.bernstein-story-payoff { color: var(--pink); text-align: center; font-weight: 700; }
-.bernstein-story-source { color: var(--tan); font-size: .8rem; text-align: center; }
+.bernstein-story-heading p { margin-block: .75rem 1.25rem; }
+.history-poster { --ink: #152c43; color: var(--ink); background: #f3efdc; padding: clamp(1.1rem, 3vw, 2.5rem); border: .3rem double var(--ink); outline: .25rem solid #f3efdc; box-shadow: .55rem .55rem 0 #97794d; font-family: Georgia, serif; }
+.history-poster-heading { text-align: center; border-bottom: .2rem solid var(--ink); padding-bottom: 1.25rem; }
+.history-poster-kicker { display: inline-block; border: .125rem solid; padding: .25em .65em; font: 700 .8rem Arial, sans-serif; letter-spacing: .08em; transform: rotate(-2deg); }
+.history-poster h3 { margin: 1rem 0 .75rem; color: var(--ink); font-family: Impact, 'Arial Narrow', sans-serif; font-size: clamp(2rem, 5vw, 4.2rem); line-height: 1.02; letter-spacing: -.025em; }
+.history-poster-subtitle { font: 700 .8rem Arial, sans-serif; letter-spacing: .07em; }
+.epilogue-narrative .history-poster-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.7rem; margin: 1.6rem 0; padding: 0; list-style: none; }
+.epilogue-narrative .history-poster-steps li { position: relative; margin: 0; text-align: center; }
+.history-poster-number { display: inline-grid; place-items: center; width: 2.1em; height: 2.1em; border-radius: 50%; background: var(--ink); color: #fffdf4; font: 900 1.2rem Arial, sans-serif; }
+.history-poster h4 { display: grid; align-content: center; min-height: 3em; margin: .6rem 0; font: 900 1.15rem/1.2 'Arial Narrow', Arial, sans-serif; text-transform: uppercase; }
+.history-poster-picture { display: block; width: 100%; height: auto; max-height: 9rem; margin: .6rem auto; }
+.history-poster-steps p { font-size: 1rem; line-height: 1.45; text-align: left; }
+.history-poster-steps li + li::before { content: '➜'; position: absolute; left: -1.6rem; top: 8.5rem; font: 900 1.8rem Arial, sans-serif; color: #777650; }
+.history-poster-moral { padding: .6em; border: .2rem solid #727440; color: #55572b; text-align: center; font: 900 clamp(1rem, 2vw, 1.5rem) Arial, sans-serif; }
+.history-poster-source { margin-top: 1rem; font: .8rem/1.5 Arial, sans-serif; }
+.hunt .history-poster-source a { color: var(--ink); text-decoration: underline; }
+.bernstein-story-teaser { margin: 2rem auto .5rem; text-align: center; }
+.bernstein-story-teaser strong { color: var(--pink); }
+@media (max-width: 50rem) {
+  .epilogue-narrative .history-poster-steps { grid-template-columns: 1fr; gap: 2.75rem; }
+  .history-poster-steps li { max-width: 25rem; margin-inline: auto; }
+  .history-poster h4 { min-height: 0; }
+  .history-poster-picture { max-height: 10rem; }
+  .history-poster-steps li + li::before { content: '⬇'; left: calc(50% - .6em); top: -2.3rem; }
+}
 @media (max-width: 35rem) {
   .puzzle-images { gap: .75rem; padding: .75rem; grid-template-columns: minmax(0, 1fr) minmax(5rem, .45fr); }
   .answer-form { padding: 1rem; }
@@ -99,5 +116,5 @@
   .epilogue-slide { height: auto; grid-template-rows: auto; }
   .epilogue-images, .epilogue-images figure, .epilogue-images-trio figure { height: auto; }
   .epilogue-images img { height: auto; }
-  .epilogue-narrative .bernstein-story-steps { grid-template-columns: 1fr; }
+  .epilogue-images-pair { grid-template-columns: 1fr; }
 }
