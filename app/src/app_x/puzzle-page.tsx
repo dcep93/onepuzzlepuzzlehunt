@@ -30,7 +30,7 @@ export default function PuzzlePage() {
 
   return (
     <div className="puzzle-content">
-      <p className="puzzle-introduction">This puzzle is centered around an obscure film from <span className="puzzle-film-year">1979</span> called <strong className="puzzle-film-title">&quot;Fast Break&quot;</strong>.</p>
+      <p className="puzzle-introduction">This puzzle starts with <strong className="puzzle-film-title">Fast Break</strong>, an obscure film from <span className="puzzle-film-year">1979</span>.</p>
       <div className="puzzle-images">
         <Constellation className="puzzle-constellation" />
         <img className="puzzle-poster" src="/puzzle/fast_break.jpg" alt="Fast Break (1979) film poster" />
@@ -38,7 +38,7 @@ export default function PuzzlePage() {
       <ul className="puzzle-narrative">
         <li>This constellation might save your life! It evokes in my mind a <strong className="puzzle-emphasis">particular scene from an extremely popular movie</strong>, different from Fast Break, which is of course not popular.</li>
         <li>Don't cheat, look things up, or use tools beyond the specific puzzle minigame linked below. <strong className="puzzle-emphasis">You don't need to know anything at all about Fast Break.</strong></li>
-        <li>I made a tool, bacondegrees420, which is a fun way to find the shortest path connection between any two items: films, cast or crew.</li>
+        <li>I made bacondegrees420 based on IMDb to find the shortest connections between films, cast, and crew.</li>
         <li>Visit <a href="https://bacondegrees420.web.app/?puzzle" target="_blank" rel="noopener noreferrer">bacondegrees420.web.app?puzzle</a> - then, type in the box and submit to <strong className="puzzle-emphasis">explore connections to Fast Break</strong>. Be sure to use this and not the normal bacondegrees420 app, since that would spoil the puzzle.</li>
         <li>You will use this minigame to discover that extremely popular movie. Guess and submit the <strong className="puzzle-emphasis">six-letter secret scene</strong> from that movie, which will help you memorize the constellation.</li>
       </ul>
