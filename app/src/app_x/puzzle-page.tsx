@@ -54,7 +54,7 @@ export default function PuzzlePage() {
       </form>
       <section className="hint-section" aria-labelledby="hint-heading">
         <h2 id="hint-heading">Need a nudge?</h2>
-        <p>If you get stuck, ask your clanker for a hint by pasting the puzzle narrative below.</p>
+        <p>If you get stuck, ask your clanker for a hint by pasting the puzzle narrative below. There are no real clues in the text below, feel free to read or ignore.</p>
         <label className="visually-hidden" htmlFor="hint-narrative">Puzzle narrative to copy for a hint</label>
         <textarea id="hint-narrative" readOnly rows={9} spellCheck={false} value={hintNarrative} />
       </section>
