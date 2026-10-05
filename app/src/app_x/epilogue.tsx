@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { isEpilogueReady, preloadEpilogue, slides } from './epilogue-assets'
+import { epilogueCopy } from './epilogue-copy'
 
 export default function Epilogue() {
   const [slideIndex, setSlideIndex] = useState(0)
@@ -29,19 +30,18 @@ export default function Epilogue() {
     <section className="epilogue" aria-label="Epilogue Slideshow" style={{ visibility: ready ? 'visible' : 'hidden' }}>
       <div className="epilogue-stage">
         {slides.map((slide, index) => (
-          <div className={`epilogue-slide${slide.narrative ? ' epilogue-slide-narrated' : ''}`} key={slide.id} hidden={index !== slideIndex}>
-            {slide.narrative && <p className="epilogue-narrative">{slide.narrative}</p>}
-            <div className={`epilogue-images${slide.images.length > 1 ? ' epilogue-images-trio' : ''}`}>
+          <div className={`epilogue-slide${epilogueCopy[slide.id] ? ' epilogue-slide-narrated' : ''}${slide.images.length === 0 ? ' epilogue-slide-text' : ''}`} key={slide.id} hidden={index !== slideIndex}>
+            {epilogueCopy[slide.id] && <div className="epilogue-narrative">{epilogueCopy[slide.id]}</div>}
+            {slide.images.length > 0 && <div className={`epilogue-images${slide.images.length > 1 ? ' epilogue-images-trio' : ''}`}>
               {slide.images.map(image => {
                 const picture = <img src={`/puzzle/${image.file}`} alt={image.alt} loading="eager" decoding="sync" />
                 return (
                   <figure key={image.file}>
                     {slide.href ? <a href={slide.href} target="_blank" rel="noopener noreferrer">{picture}</a> : picture}
-                    {image.caption && <figcaption>{image.caption}</figcaption>}
                   </figure>
                 )
               })}
-            </div>
+            </div>}
           </div>
         ))}
       </div>
