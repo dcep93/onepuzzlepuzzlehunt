@@ -35,16 +35,22 @@ test('rejects malformed braces instead of publishing a partly decoded spoiler', 
 })
 
 test('the published hint contains the intended nested clues only after decoding', () => {
-  assert.ok(hintNarrative.startsWith("Point me in the right direction. I'm trying to solve onepuzzlepuzzlehunt.web.app"))
+  assert.ok(hintNarrative.startsWith("I'm playing onepuzzlepuzzlehunt.web.app. Be a spoiler-conscious puzzle host."))
+  assert.ok(hintNarrative.includes('Your first reply should only ask: "What do you know so far?"'))
   assert.ok(!hintNarrative.includes('{'))
-  for (const spoiler of ['K Callan', 'Knives Out', 'Laurence Fishburne', 'The Matrix', 'karate']) {
+  for (const spoiler of ['K Callan', 'Knives Out', 'Laurence Fishburne', 'The Matrix', 'Morpheus', 'Neo', 'karate', 'kung fu', 'kungfu', 'kung-fu']) {
     assert.ok(!hintNarrative.includes(spoiler), spoiler)
   }
   const outer = decode(hintNarrative.split('b64:')[1])
-  assert.ok(outer.includes('the connection path will be green,'))
-  assert.ok(outer.startsWith('K Callan and b64:S25pdmVzIE91dA== are red herrings.'))
+  assert.ok(outer.includes('makes the row uniquely green'))
+  assert.ok(outer.includes('are yellow; remaining routes are pink'))
+  assert.ok(outer.includes('K Callan and b64:S25pdmVzIE91dA== are red herrings.'))
   const clues = [...outer.matchAll(/b64:([A-Za-z0-9+/=]+)/g)].map(match => decode(match[1]))
-  assert.deepEqual(clues, ['Knives Out', 'Laurence Fishburne', 'The Matrix', 'karate'])
+  assert.deepEqual(clues, [
+    'Knives Out', 'Laurence Fishburne', 'The Matrix',
+    "Morpheus's beckoning pose in the dojo training fight with Neo",
+    'karate', 'kung fu', 'kungfu', 'kung-fu',
+  ])
 })
 
 test('epilogue requires a solved answer, while home and puzzle remain accessible', () => {
