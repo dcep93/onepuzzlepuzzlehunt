@@ -11,8 +11,9 @@ in `app/src/app_x`. Use npm consistently and commit its lockfile.
 Reuse FantasyFilmBall's house style: background gradient from `#1a1411` to
 `#0c0907`, brown surfaces, warm tan `#c99c6b` borders and details, pink `#ff7bc3`
 headings, and Comic Sans with Comic Sans MS / Chalkboard SE fallbacks.
-Show the title “One Puzzle Puzzle Hunt” and a small “Coming soon” panel with
-“One puzzle. A whole hunt.” The initial screen is static, responsive, and
+Show the title “One Puzzle Puzzle Hunt”, the eyebrow “one puzzle. a whole hunt.”,
+and a small “Coming soon” panel with “A little mystery is taking shape.”
+The initial screen is static, responsive, and
 semantic. No puzzle mechanics, answer validation, accounts, or backend are
 included in this initialization. Use rem/em sizing, visible keyboard focus for
 any links, and reduced-motion-safe styling.
