@@ -25,7 +25,7 @@ export default function App() {
     <main className={`hunt hunt-${view}`}>
       <div className="hunt-content">
         <header className="hunt-header">
-          <p className="hunt-eyebrow">One Puzzle Puzzle Hunt</p>
+          <p className="hunt-eyebrow"><a href="/">One Puzzle Puzzle Hunt</a></p>
           <h1 ref={headingRef} tabIndex={-1}>{headings[view]}</h1>
           {view === 'home' && <p className="hunt-subtitle">Solve this puzzle to find out why</p>}
         </header>
