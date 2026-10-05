@@ -34,7 +34,9 @@
 .hunt-button-secondary:hover:not(:disabled) { color: #291b20; }
 .begin-button { min-width: 8rem; font-size: 1.2rem; }
 .puzzle-content { max-width: 52rem; margin-inline: auto; }
-.puzzle-introduction { margin-bottom: 1.5rem; }
+.puzzle-introduction { margin-bottom: 1.5rem; padding: .75rem 1.25rem; border-left: .1875rem solid var(--pink); border-radius: 0 .5rem .5rem 0; background: linear-gradient(90deg, rgba(255, 123, 195, .06), transparent); color: #d7bb9a; text-wrap: pretty; }
+.puzzle-film-year { color: var(--text); font-variant-numeric: tabular-nums; }
+.puzzle-film-title { color: var(--pink); font-family: var(--display-font); font-size: 1.35em; font-weight: 400; white-space: nowrap; }
 .puzzle-images { display: grid; grid-template-columns: minmax(0, 1fr) minmax(7rem, .35fr); gap: 1.5rem; align-items: center; margin-bottom: 2rem; padding: 1.25rem; border: .0625rem solid var(--border); border-radius: 1rem; background: var(--surface); }
 .puzzle-constellation { display: block; width: 100%; height: auto; max-height: 22rem; object-fit: contain; }
 .puzzle-poster { width: 100%; max-height: 20rem; object-fit: contain; border-radius: .25rem; }

@@ -30,7 +30,7 @@ export default function PuzzlePage() {
 
   return (
     <div className="puzzle-content">
-      <p className="puzzle-introduction">This puzzle is centered around an obscure film from 1979 called &quot;Fast Break&quot;.</p>
+      <p className="puzzle-introduction">This puzzle is centered around an obscure film from <span className="puzzle-film-year">1979</span> called <strong className="puzzle-film-title">&quot;Fast Break&quot;</strong>.</p>
       <div className="puzzle-images">
         <Constellation className="puzzle-constellation" />
         <img className="puzzle-poster" src="/puzzle/fast_break.jpg" alt="Fast Break (1979) film poster" />
