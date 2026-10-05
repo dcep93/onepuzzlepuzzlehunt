@@ -42,7 +42,7 @@ export default function Epilogue() {
     <section className="epilogue" aria-label="Epilogue Slideshow" style={{ visibility: ready ? 'visible' : 'hidden' }}>
       <div className={`epilogue-stage${slides[slideIndex].id === 'infographic' ? ' epilogue-stage-story' : ''}${slides[slideIndex].id === 'overlay-end' ? ' epilogue-stage-finale' : ''}`}>
         {slides.map((slide, index) => (
-          <div className={`epilogue-slide${epilogueCopy[slide.id] || slide.id === 'infographic' ? ' epilogue-slide-narrated' : ''}${slide.images.length === 0 ? ' epilogue-slide-text' : ''}${slide.id === 'infographic' ? ' epilogue-slide-story' : ''}${slide.id === 'overlay-end' ? ' epilogue-slide-finale' : ''}`} key={slide.id} hidden={index !== slideIndex}>
+          <div className={`epilogue-slide${epilogueCopy[slide.id] || slide.id === 'infographic' ? ' epilogue-slide-narrated' : ''}${slide.images.length === 0 ? ' epilogue-slide-text' : ''}${slide.id === 'infographic' ? ' epilogue-slide-story' : ''}${slide.id === 'overlay-end' ? ' epilogue-slide-finale' : ''}${slide.id === 'dojo-answer' ? ' epilogue-slide-dojo' : ''}`} key={slide.id} hidden={index !== slideIndex}>
             {slide.id === 'infographic' && <div className="epilogue-narrative"><BernsteinStory revealed={storyStage !== 'hidden'} unlocked={storyStage === 'unlocked'} onReveal={revealStory} onUnlock={unlockStory} /></div>}
             {epilogueCopy[slide.id] && <div className="epilogue-narrative">{epilogueCopy[slide.id]}</div>}
             {slide.images.length > 0 && <div className={`epilogue-images${slide.images.length === 3 ? ' epilogue-images-trio' : slide.images.length === 2 ? ' epilogue-images-pair' : ''}`}>

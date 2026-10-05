@@ -125,4 +125,5 @@
   .epilogue-images, .epilogue-images figure, .epilogue-images-trio figure { height: auto; }
   .epilogue-images img { height: auto; }
   .epilogue-images-pair { grid-template-columns: 1fr; }
+  .epilogue-slide-dojo { padding-bottom: 2rem; }
 }
