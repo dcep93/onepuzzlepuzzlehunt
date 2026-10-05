@@ -55,10 +55,18 @@
 .hunt-epilogue .hunt-content { width: min(100%, 90rem); }
 .hunt-epilogue .hunt-header { margin-bottom: 1rem; }
 .hunt-epilogue h1 { font-size: 2rem; }
-.epilogue-stage { display: grid; place-items: center; height: max(16rem, calc(100svh - 17rem)); }
-.epilogue-slide, .epilogue-slide > a { display: block; width: 100%; height: 100%; min-height: 0; }
+.epilogue-stage { display: grid; place-items: center; height: max(32rem, calc(100svh - 17rem)); }
+.epilogue-slide { display: grid; grid-template-rows: minmax(0, 1fr); gap: 1.25rem; width: 100%; height: 100%; min-height: 0; }
+.epilogue-slide-narrated { grid-template-rows: auto minmax(0, 1fr); }
 .epilogue-slide[hidden] { display: none; }
-.epilogue-stage img { width: 100%; height: 100%; object-fit: contain; }
+.epilogue-narrative { width: min(100%, 65ch); margin-inline: auto; font-size: clamp(1rem, 1.5vw, 1.125rem); }
+.epilogue-images { display: grid; min-height: 0; width: 100%; height: 100%; }
+.epilogue-images-trio { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.5rem, 2vw, 1.5rem); max-width: 48rem; margin-inline: auto; }
+.epilogue-images figure { display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: .5rem; min-width: 0; min-height: 0; margin: 0; }
+.epilogue-images-trio figure { height: min(100%, 26rem); align-self: center; }
+.epilogue-images a { display: block; width: 100%; height: 100%; min-height: 0; }
+.epilogue-images img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+.epilogue-images figcaption { color: var(--tan); text-align: center; font-size: clamp(.75rem, 1.5vw, 1rem); line-height: 1.35; }
 .epilogue-controls { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; }
 .epilogue-controls p { min-width: 3em; color: var(--tan); text-align: center; font-variant-numeric: tabular-nums; }
 @media (max-width: 35rem) {

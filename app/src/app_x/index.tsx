@@ -9,7 +9,7 @@ import './styles.css'
 const headings = {
   home: 'This constellation might save your life',
   puzzle: 'The puzzle',
-  epilogue: 'Epilogue',
+  epilogue: 'Epilogue Slideshow',
 }
 
 export default function App() {

@@ -26,16 +26,24 @@ export default function Epilogue() {
   }, [ready])
 
   return (
-    <section className="epilogue" aria-label="Epilogue slideshow" style={{ visibility: ready ? 'visible' : 'hidden' }}>
+    <section className="epilogue" aria-label="Epilogue Slideshow" style={{ visibility: ready ? 'visible' : 'hidden' }}>
       <div className="epilogue-stage">
-        {slides.map((slide, index) => {
-          const picture = <img src={`/puzzle/${slide.file}`} alt={slide.alt} loading="eager" decoding="sync" />
-          return (
-            <div className="epilogue-slide" key={slide.file} hidden={index !== slideIndex}>
-              {slide.href ? <a href={slide.href} target="_blank" rel="noopener noreferrer">{picture}</a> : picture}
+        {slides.map((slide, index) => (
+          <div className={`epilogue-slide${slide.narrative ? ' epilogue-slide-narrated' : ''}`} key={slide.id} hidden={index !== slideIndex}>
+            {slide.narrative && <p className="epilogue-narrative">{slide.narrative}</p>}
+            <div className={`epilogue-images${slide.images.length > 1 ? ' epilogue-images-trio' : ''}`}>
+              {slide.images.map(image => {
+                const picture = <img src={`/puzzle/${image.file}`} alt={image.alt} loading="eager" decoding="sync" />
+                return (
+                  <figure key={image.file}>
+                    {slide.href ? <a href={slide.href} target="_blank" rel="noopener noreferrer">{picture}</a> : picture}
+                    {image.caption && <figcaption>{image.caption}</figcaption>}
+                  </figure>
+                )
+              })}
             </div>
-          )
-        })}
+          </div>
+        ))}
       </div>
       <nav className="epilogue-controls" aria-label="Slideshow controls">
         <button className="hunt-button hunt-button-secondary" disabled={slideIndex === 0} onClick={() => setSlideIndex(index => Math.max(0, index - 1))}>Previous</button>
