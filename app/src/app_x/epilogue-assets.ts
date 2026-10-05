@@ -1,6 +1,5 @@
-const chessHref = 'https://chess420.web.app/endgames/knightAndBishop+#w//7k/8/5K2/6N1/4B3/8/8/8_w_-_-_42_22'
 type SlideImage = { file: string; alt: string }
-type EpilogueSlide = { id: string; images: SlideImage[]; href?: string }
+type EpilogueSlide = { id: string; images: SlideImage[] }
 
 const morpheus = { file: 'pose.png', alt: 'Morpheus beckoning with one hand in the martial arts training scene from The Matrix.' }
 export const slides: EpilogueSlide[] = [
@@ -26,7 +25,7 @@ export const slides: EpilogueSlide[] = [
   { id: 'infographic', images: [{ file: 'infographic.png', alt: 'An illustrated account of Ossip Bernstein and the 1918 chess game said to have saved his life.' }] },
   { id: 'life-saving-game', images: [{ file: 'life_saving_game_screenshot.png', alt: 'The chess position from the life-saving game.' }] },
   { id: 'overlay-start', images: [{ file: 'overlay_start.png', alt: 'Morpheus and the constellation overlaid on a chessboard.' }] },
-  { id: 'overlay-end', images: [{ file: 'overlay_end.png', alt: 'The constellation as a memory aid for the knight and bishop endgame. Open the endgame to play.' }], href: chessHref },
+  { id: 'overlay-end', images: [{ file: 'overlay_end.png', alt: 'The constellation as a memory aid for the knight and bishop endgame.' }] },
 ]
 
 export const slideImageFiles = [...new Set(slides.flatMap(slide => slide.images.map(image => image.file)))]

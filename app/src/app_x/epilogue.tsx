@@ -33,14 +33,11 @@ export default function Epilogue() {
           <div className={`epilogue-slide${epilogueCopy[slide.id] ? ' epilogue-slide-narrated' : ''}${slide.images.length === 0 ? ' epilogue-slide-text' : ''}`} key={slide.id} hidden={index !== slideIndex}>
             {epilogueCopy[slide.id] && <div className="epilogue-narrative">{epilogueCopy[slide.id]}</div>}
             {slide.images.length > 0 && <div className={`epilogue-images${slide.images.length > 1 ? ' epilogue-images-trio' : ''}`}>
-              {slide.images.map(image => {
-                const picture = <img src={`/puzzle/${image.file}`} alt={image.alt} loading="eager" decoding="sync" />
-                return (
-                  <figure key={image.file}>
-                    {slide.href ? <a href={slide.href} target="_blank" rel="noopener noreferrer">{picture}</a> : picture}
-                  </figure>
-                )
-              })}
+              {slide.images.map(image => (
+                <figure key={image.file}>
+                  <img src={`/puzzle/${image.file}`} alt={image.alt} loading="eager" decoding="sync" />
+                </figure>
+              ))}
             </div>}
           </div>
         ))}
