@@ -1,22 +1,42 @@
+import { lazy, Suspense, useEffect, useRef } from 'react'
+import { navigate, useHuntView } from './navigation'
+import PuzzlePage from './puzzle-page'
 import './styles.css'
 
+const Epilogue = lazy(() => import('./epilogue'))
+const headings = {
+  home: 'This constellation might save your life',
+  puzzle: 'The puzzle',
+  epilogue: 'Epilogue',
+}
+
 export default function App() {
+  const view = useHuntView()
+  const headingRef = useRef<HTMLHeadingElement>(null)
+  useEffect(() => {
+    const path = view === 'home' ? '/' : `/${view}`
+    if (window.location.pathname !== path) window.history.replaceState(null, '', path)
+    document.title = view === 'home' ? 'One Puzzle Puzzle Hunt' : `${headings[view]} · One Puzzle Puzzle Hunt`
+    window.scrollTo(0, 0)
+    headingRef.current?.focus({ preventScroll: true })
+  }, [view])
+
   return (
-    <main className="hunt">
+    <main className={`hunt hunt-${view}`}>
       <div className="hunt-content">
         <header className="hunt-header">
-          <p className="hunt-eyebrow">one puzzle. a whole hunt.</p>
-          <h1>
-            One Puzzle
-            <br />
-            Puzzle Hunt
-          </h1>
+          <p className="hunt-eyebrow">One Puzzle Puzzle Hunt</p>
+          <h1 ref={headingRef} tabIndex={-1}>{headings[view]}</h1>
+          {view === 'home' && <p className="hunt-subtitle">Solve this puzzle to find out why</p>}
         </header>
-        <section className="coming-soon" aria-labelledby="coming-soon-title">
-          <span className="mystery-tile" aria-hidden="true">?</span>
-          <h2 id="coming-soon-title">Coming soon</h2>
-          <p>A little mystery is taking shape.</p>
-        </section>
+        {view === 'home' && (
+          <div className="hunt-intro">
+            <img className="home-constellation" src="/puzzle/constellation.png" alt="Five tan stars and a blue arrow pointing diagonally upward to the left." />
+            <button className="hunt-button begin-button" onClick={() => navigate('puzzle')}>begin</button>
+          </div>
+        )}
+        {view === 'puzzle' && <PuzzlePage />}
+        {view === 'epilogue' && <Suspense fallback={<p role="status">Loading epilogue…</p>}><Epilogue /></Suspense>}
       </div>
     </main>
   )
