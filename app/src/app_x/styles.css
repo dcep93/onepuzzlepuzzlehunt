@@ -102,6 +102,13 @@
 .bernstein-story-teaser p { margin: .3rem 0; }
 .bernstein-story-teaser strong, .bernstein-story-continue { color: var(--pink); }
 .bernstein-story-continue { font: 700 1.4rem var(--display-font); }
+@media (min-width: 60rem) {
+  .epilogue-stage-finale { height: auto; min-height: max(32rem, calc(100svh - 17rem)); }
+  .epilogue-slide-finale { height: auto; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); grid-template-rows: auto; align-items: center; gap: 2rem; }
+  .epilogue-slide-finale .epilogue-images,
+  .epilogue-slide-finale .epilogue-images figure { height: auto; }
+  .epilogue-slide-finale .epilogue-images img { height: auto; max-height: max(32rem, calc(100svh - 15rem)); }
+}
 @media (max-width: 50rem) {
   .epilogue-narrative .history-poster-steps { grid-template-columns: 1fr; gap: 2.75rem; }
   .history-poster-steps li { max-width: 25rem; margin-inline: auto; }

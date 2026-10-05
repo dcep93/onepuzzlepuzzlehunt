@@ -29,9 +29,9 @@ export default function Epilogue() {
 
   return (
     <section className="epilogue" aria-label="Epilogue Slideshow" style={{ visibility: ready ? 'visible' : 'hidden' }}>
-      <div className={`epilogue-stage${slides[slideIndex].id === 'infographic' ? ' epilogue-stage-story' : ''}`}>
+      <div className={`epilogue-stage${slides[slideIndex].id === 'infographic' ? ' epilogue-stage-story' : ''}${slides[slideIndex].id === 'overlay-end' ? ' epilogue-stage-finale' : ''}`}>
         {slides.map((slide, index) => (
-          <div className={`epilogue-slide${epilogueCopy[slide.id] ? ' epilogue-slide-narrated' : ''}${slide.images.length === 0 ? ' epilogue-slide-text' : ''}${slide.id === 'infographic' ? ' epilogue-slide-story' : ''}`} key={slide.id} hidden={index !== slideIndex}>
+          <div className={`epilogue-slide${epilogueCopy[slide.id] ? ' epilogue-slide-narrated' : ''}${slide.images.length === 0 ? ' epilogue-slide-text' : ''}${slide.id === 'infographic' ? ' epilogue-slide-story' : ''}${slide.id === 'overlay-end' ? ' epilogue-slide-finale' : ''}`} key={slide.id} hidden={index !== slideIndex}>
             {epilogueCopy[slide.id] && <div className="epilogue-narrative">{epilogueCopy[slide.id]}</div>}
             {slide.images.length > 0 && <div className={`epilogue-images${slide.images.length === 3 ? ' epilogue-images-trio' : slide.images.length === 2 ? ' epilogue-images-pair' : ''}`}>
               {slide.images.map(image => (
