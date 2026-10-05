@@ -24,7 +24,7 @@
 .hunt :is(button, input, textarea, a):focus-visible { outline: .15rem solid var(--pink); outline-offset: .25rem; }
 .hunt-home { display: grid; align-items: center; }
 .hunt-intro { display: grid; justify-items: center; gap: 1.5rem; }
-.home-constellation { display: block; width: min(100%, 40rem); max-height: 49svh; object-fit: contain; }
+.home-constellation { display: block; width: min(100%, 40rem); height: auto; max-height: 49svh; object-fit: contain; }
 .hunt-button { border: .0625rem solid var(--pink); border-radius: .75rem; padding: .65em 1.5em; color: #291b20; background: var(--pink); font: 700 1rem/1.4 var(--display-font); cursor: pointer; }
 .hunt-button:hover:not(:disabled) { background: #ffacda; border-color: #ffacda; }
 .hunt-button:disabled { opacity: .4; cursor: default; }

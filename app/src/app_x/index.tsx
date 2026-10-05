@@ -31,7 +31,7 @@ export default function App() {
         </header>
         {view === 'home' && (
           <div className="hunt-intro">
-            <img className="home-constellation" src="/puzzle/constellation.png" alt="Five tan stars and a blue arrow pointing diagonally upward to the left." />
+            <img className="home-constellation" src="/puzzle/constellation.png" width={1591} height={1145} alt="Five tan stars and a blue arrow pointing diagonally upward to the left." />
             <button className="hunt-button begin-button" onClick={() => navigate('puzzle')}>begin</button>
           </div>
         )}
