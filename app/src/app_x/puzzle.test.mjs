@@ -47,10 +47,13 @@ test('the published hint contains the intended nested clues only after decoding'
   const outer = blocks[2]
   assert.ok(outer.includes('makes the row uniquely green'))
   assert.ok(outer.includes('are yellow; remaining routes are pink'))
-  assert.ok(outer.includes('K Callan and b64:S25pdmVzIE91dA== are red herrings.'))
+  assert.ok(outer.startsWith('If the user asks to decrypt, offer to recurse, but do not do so by default.'))
+  assert.ok(!outer.includes('K Callan'))
+  assert.ok(!outer.includes('1999'))
+  assert.ok(outer.includes('b64:SyBDYWxsYW4= and b64:S25pdmVzIE91dA== are red herrings.'))
   const clues = [...outer.matchAll(/b64:([A-Za-z0-9+/=]+)/g)].map(match => decode(match[1]))
   assert.deepEqual(clues, [
-    'Knives Out', 'Laurence Fishburne', 'The Matrix',
+    'K Callan', 'Knives Out', 'Laurence Fishburne', 'The Matrix', '1999',
     "Morpheus's beckoning pose in the dojo training fight with Neo",
     'karate', 'kung fu', 'kungfu', 'kung-fu',
   ])
