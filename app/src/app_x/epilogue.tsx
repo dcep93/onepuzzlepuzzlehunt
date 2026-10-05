@@ -6,6 +6,7 @@ import { epilogueCopy } from './epilogue-copy'
 export default function Epilogue() {
   const [slideIndex, setSlideIndex] = useState(0)
   const [ready, setReady] = useState(isEpilogueReady)
+  useEffect(() => { window.scrollTo(0, 0) }, [slideIndex])
   useEffect(() => {
     let active = true
     void preloadEpilogue().then(() => { if (active) setReady(true) })
