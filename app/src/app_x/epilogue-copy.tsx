@@ -10,7 +10,7 @@ export const epilogueCopy: Record<string, ReactNode> = {
   'dojo-answer': <p>Once you lock in on The Matrix, you need to find the scene associated with the constellation. Of course, I'm talking about the scene Neo and Morpheus fight in the dojo! Either "karate" or "kung fu" were acceptable answers.</p>,
   'life-saving-game': <ul>
     <li>A few months ago, I was white in this position, with about a minute on the clock, but the game ended in a draw.</li>
-    <li>To test myself, I promoted to a bishop, but in the end, I couldn't convert to checkmate in such a small time limit.</li>
+    <li>I could've promoted to a Queen for an easy victory, but instead, I promoted to a bishop to test myself. In the end, I couldn't convert to checkmate in such a small time limit.</li>
   </ul>,
   'overlay-start': <p>If we place the constellation over the chessboard, you can see <a href="https://www.youtube.com/watch?v=oRK7XLhGz_c" target="_blank" rel="noopener noreferrer">Naroditsky's W Maneuver</a>, which I think is the best way to learn the bishop + knight checkmate.</p>,
   'overlay-end': <ul>
