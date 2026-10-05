@@ -24,6 +24,14 @@ fi
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 cd "$repo_root/app"
 
+if ! printf '%s' "$SA_KEY" | jq -e '
+  type == "object" and .type == "service_account" and
+  ([.project_id, .client_email, .private_key] | all(type == "string" and length > 0))
+' >/dev/null 2>&1; then
+  echo "SA_KEY must contain the complete service-account JSON key file, not a key ID or filename." >&2
+  echo "Update the repository Actions secret: gh secret set SA_KEY --repo dcep93/onepuzzlepuzzlehunt < gac.json" >&2
+  exit 1
+fi
 project_id="$(printf '%s' "$SA_KEY" | jq -er '.project_id')"
 if [[ "$project_id" != "onepuzzlepuzzlehunt" ]]; then
   echo "Expected an SA_KEY for project onepuzzlepuzzlehunt." >&2
