@@ -1,10 +1,11 @@
-import { lazy, Suspense, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { navigate, useHuntView } from './navigation'
 import PuzzlePage from './puzzle-page'
 import Constellation from './constellation'
+import Epilogue from './epilogue'
+import { preloadEpilogue } from './epilogue-assets'
 import './styles.css'
 
-const Epilogue = lazy(() => import('./epilogue'))
 const headings = {
   home: 'This constellation might save your life',
   puzzle: 'The puzzle',
@@ -14,6 +15,7 @@ const headings = {
 export default function App() {
   const view = useHuntView()
   const headingRef = useRef<HTMLHeadingElement>(null)
+  useEffect(() => { void preloadEpilogue() }, [])
   useEffect(() => {
     const path = view === 'home' ? '/' : `/${view}`
     if (window.location.pathname !== path) window.history.replaceState(null, '', path)
@@ -37,7 +39,7 @@ export default function App() {
           </div>
         )}
         {view === 'puzzle' && <PuzzlePage />}
-        {view === 'epilogue' && <Suspense fallback={<p role="status">Loading epilogue…</p>}><Epilogue /></Suspense>}
+        {view === 'epilogue' && <Epilogue />}
       </div>
     </main>
   )

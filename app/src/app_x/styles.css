@@ -54,7 +54,8 @@
 .hunt-epilogue .hunt-header { margin-bottom: 1rem; }
 .hunt-epilogue h1 { font-size: 2rem; }
 .epilogue-stage { display: grid; place-items: center; height: max(16rem, calc(100svh - 17rem)); }
-.epilogue-stage > img, .epilogue-stage > a { display: block; width: 100%; height: 100%; min-height: 0; }
+.epilogue-slide, .epilogue-slide > a { display: block; width: 100%; height: 100%; min-height: 0; }
+.epilogue-slide[hidden] { display: none; }
 .epilogue-stage img { width: 100%; height: 100%; object-fit: contain; }
 .epilogue-controls { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; }
 .epilogue-controls p { min-width: 3em; color: var(--tan); text-align: center; font-variant-numeric: tabular-nums; }

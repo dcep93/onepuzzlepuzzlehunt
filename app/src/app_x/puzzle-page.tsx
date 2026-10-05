@@ -1,18 +1,29 @@
-import { useState, type FormEvent } from 'react'
+import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { hintNarrative, isCorrectAnswer } from './puzzle'
 import { navigate, rememberSolved } from './navigation'
 import Constellation from './constellation'
+import { preloadEpilogue } from './epilogue-assets'
 
 export default function PuzzlePage() {
   const [answer, setAnswer] = useState('')
   const [feedback, setFeedback] = useState('')
+  const submitting = useRef(false)
+  const active = useRef(true)
+  useEffect(() => {
+    active.current = true
+    return () => { active.current = false }
+  }, [])
 
-  function submitAnswer(event: FormEvent<HTMLFormElement>) {
+  async function submitAnswer(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    if (submitting.current) return
     if (!isCorrectAnswer(answer)) {
       setFeedback(answer.trim() ? 'Not quite. Keep exploring.' : 'Enter your six-letter scene.')
       return
     }
+    submitting.current = true
+    await preloadEpilogue()
+    if (!active.current) return
     rememberSolved()
     navigate('epilogue')
   }
