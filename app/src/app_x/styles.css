@@ -96,6 +96,8 @@
 .history-poster-steps p { font-size: 1rem; line-height: 1.45; text-align: left; }
 .history-poster-steps li + li::before { content: '➜'; position: absolute; left: -1.6rem; top: 8.5rem; font: 900 1.8rem Arial, sans-serif; color: #777650; }
 .history-poster-moral { padding: 1em; border: .2rem solid #727440; color: #55572b; text-align: left; font: 700 1.05rem/1.55 Georgia, serif; }
+.history-poster-moral p { margin: 0; }
+.history-poster-moral .history-poster-moral-title { margin-bottom: .75rem; text-align: center; font: 900 clamp(1.2rem, 2.5vw, 1.75rem)/1.25 Arial, sans-serif; }
 .history-poster-source { margin-top: 1rem; font: .8rem/1.5 Arial, sans-serif; }
 .hunt .history-poster-source a { color: var(--ink); text-decoration: underline; }
 .bernstein-story-teaser { margin: 1.5rem auto .5rem; color: var(--pink); text-align: center; font-weight: 700; }

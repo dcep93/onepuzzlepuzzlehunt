@@ -68,7 +68,10 @@ export default function BernsteinStory({ active, controlsRef, onQuestionSeen }: 
               </li>
             ))}
           </ol>
-          <p className="history-poster-moral">Bernstein’s victory convinced the officer. He spared Bernstein and the other prisoners from the firing squad, sending them back to prison. They were later released. Bernstein had played for his life—and won.</p>
+          <div className="history-poster-moral">
+            <p className="history-poster-moral-title"><span aria-hidden="true">★</span> CHESS: POSSIBLY A SURVIVAL SKILL</p>
+            <p>Bernstein’s victory convinced the officer. He spared Bernstein and the other prisoners from the firing squad, sending them back to prison. They were later released. Bernstein had played for his life—and won.</p>
+          </div>
           <p className="history-poster-source">As told by Edward Lasker in <cite>Chess Review</cite>, April 1963. <a href="https://en.chessbase.com/newsroom/post/ossip-bernstein-september-20-1882-november-30-1962-the-last-star-of-chess-golden-age" target="_blank" rel="noopener noreferrer">Read the account</a>. Portrait: <a href="https://commons.wikimedia.org/wiki/File:Ossip_Bernstein.JPG" target="_blank" rel="noopener noreferrer">St. Petersburg, 1909</a> (public domain).</p>
         </article>
         <p ref={questionRef} className="bernstein-story-teaser">Why does memorizing this constellation help me in chess?</p>
