@@ -6,8 +6,8 @@ function decode(value) {
   return new TextDecoder().decode(Uint8Array.from(atob(value), character => character.charCodeAt(0)))
 }
 
-test('accepts karate and kung fu regardless of casing and surrounding whitespace', () => {
-  for (const answer of ['karate', 'KARATE', 'KaRaTe', ' karate\n', 'kung fu', 'KUNG FU', 'KuNg Fu', ' kung fu\n']) {
+test('accepts karate and kung fu, including compact and hyphenated spellings', () => {
+  for (const answer of ['karate', 'KARATE', 'KaRaTe', ' karate\n', 'kung fu', 'KUNG FU', 'KuNg Fu', ' kung fu\n', 'kungfu', 'KUNGFU', 'kung-fu', 'Kung-Fu', 'kung  fu']) {
     assert.equal(isCorrectAnswer(answer), true)
   }
   for (const answer of ['', 'karate!', 'kar ate', 'kung fu!', 'The Matrix']) {
