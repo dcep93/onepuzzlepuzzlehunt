@@ -19,11 +19,11 @@ export const slides: EpilogueSlide[] = [
     id: 'dojo-answer',
     images: [morpheus],
   },
+  { id: 'life-saving-game', images: [{ file: 'life_saving_game_screenshot.png', alt: 'The chess position from the life-saving game.' }] },
+  { id: 'infographic', images: [] },
   { id: 'morpheus', images: [morpheus] },
   { id: 'morpheus-constellation', images: [{ file: 'pose_constellation.png', alt: 'The constellation overlaid on Morpheus’s pose.' }] },
   { id: 'boxes', images: [{ file: 'boxes.png', alt: 'The constellation’s five points marked with squares over Morpheus’s pose.' }] },
-  { id: 'infographic', images: [] },
-  { id: 'life-saving-game', images: [{ file: 'life_saving_game_screenshot.png', alt: 'The chess position from the life-saving game.' }] },
   { id: 'overlay-start', images: [{ file: 'overlay_start.png', alt: 'Morpheus and the constellation overlaid on a chessboard.' }] },
   { id: 'overlay-end', images: [{ file: 'overlay_end.png', alt: 'The constellation as a memory aid for the knight and bishop endgame.' }] },
 ]
