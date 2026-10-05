@@ -19,5 +19,6 @@ export const epilogueCopy: Record<string, ReactNode> = {
     <li>From here, all that's left to do is to practice the checkmate, in case you find yourself in the Russian Revolution, or similar.</li>
     <li>I made another tool, <a href="https://lottaendgames.web.app/mate/bishop-knight" target="_blank" rel="noopener noreferrer">lottaendgames.web.app</a> where you can practice different checkmating patterns.</li>
     <li>Unfortunately, due to the complexity, the "best move" for knight + bishop isn't very human-learnable, but it can still help if you get stuck, and offers a timer.</li>
+    <li>A lifelong challenge: can you consistently bishop + knight checkmate in one minute? How about 15 seconds?</li>
   </ul>,
 }
