@@ -7,7 +7,6 @@ const steps = [
   { title: 'Arrested!', picture: 'prison', text: 'After the Russian Revolution, chess master and lawyer Ossip Bernstein was arrested by the Bolshevik secret police. He faced a firing squad.' },
   { title: 'Wait. THAT Bernstein?', picture: 'name', text: 'An officer spotted his name. Was this really the famous chess master? There was one way to find out.' },
   { title: 'A game for his life', picture: 'chess', text: 'The officer demanded a game. Bernstein had to prove his chess skill—with his life at stake. He won quickly.' },
-  { title: 'He survived!', picture: 'freedom', text: 'Bernstein’s victory convinced the officer. He spared Bernstein and the other prisoners from the firing squad, sending them back to prison. They were later released. Bernstein had played for his life—and won.' },
 ] as const
 
 export default function BernsteinStory() {
@@ -40,7 +39,7 @@ export default function BernsteinStory() {
               </li>
             ))}
           </ol>
-          <p className="history-poster-moral"><span aria-hidden="true">★</span> CHESS: POSSIBLY A SURVIVAL SKILL.</p>
+          <p className="history-poster-moral">Bernstein’s victory convinced the officer. He spared Bernstein and the other prisoners from the firing squad, sending them back to prison. They were later released. Bernstein had played for his life—and won.</p>
           <p className="history-poster-source">As told by Edward Lasker in <cite>Chess Review</cite>, April 1963. <a href="https://en.chessbase.com/newsroom/post/ossip-bernstein-september-20-1882-november-30-1962-the-last-star-of-chess-golden-age" target="_blank" rel="noopener noreferrer">Read the account</a>. Portrait: <a href="https://commons.wikimedia.org/wiki/File:Ossip_Bernstein.JPG" target="_blank" rel="noopener noreferrer">St. Petersburg, 1909</a> (public domain).</p>
         </article>
         <aside className="bernstein-story-teaser">

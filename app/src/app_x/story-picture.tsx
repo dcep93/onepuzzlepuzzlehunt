@@ -1,4 +1,4 @@
-type Scene = 'name' | 'chess' | 'freedom'
+type Scene = 'name' | 'chess'
 
 // Deliberately simple classroom-poster illustrations; the adjacent text tells the story.
 export default function StoryPicture({ scene }: { scene: Scene }) {
@@ -17,13 +17,6 @@ export default function StoryPicture({ scene }: { scene: Scene }) {
         <text x="26" y="106" fontSize="99" fill="currentColor">♚</text>
         <text x="118" y="101" fontSize="75" fill="#a54b31" transform="rotate(24 149 81)">♔</text>
         <path d="m133 18 6 19m17-20-5 20m25-8-15 16" stroke="#a54b31" strokeWidth="4" />
-      </>}
-      {scene === 'freedom' && <>
-        <circle cx="137" cy="37" r="27" fill="#ead86a" />
-        <path d="M50 128 85 70h30l40 58" fill="#d6d0b8" />
-        <path d="M15 126V20l42-12v104M185 126V20L143 8v104M29 20v100M43 16v99M157 16v99M171 20v100" fill="none" stroke="currentColor" strokeWidth="5" />
-        <circle cx="100" cy="57" r="11" fill="currentColor" />
-        <path d="M87 89V76a13 13 0 0 1 26 0v13l-5 25h-7l-1-23-1 23h-7z" fill="currentColor" />
       </>}
     </svg>
   )

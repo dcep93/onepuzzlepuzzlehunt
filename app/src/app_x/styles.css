@@ -86,7 +86,7 @@
 .history-poster { --ink: #152c43; color: var(--ink); background: #f3efdc; padding: clamp(1.1rem, 3vw, 2.5rem); border: .3rem double var(--ink); outline: .25rem solid #f3efdc; box-shadow: .55rem .55rem 0 #97794d; font-family: Georgia, serif; }
 .history-poster-heading { text-align: center; border-bottom: .125rem solid #aaa78f; padding-bottom: .65rem; }
 .history-poster h3 { margin: 0; color: var(--ink); font: 700 clamp(1.15rem, 2vw, 1.5rem)/1.3 Georgia, serif; }
-.epilogue-narrative .history-poster-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.7rem; margin: 1.6rem 0; padding: 0; list-style: none; }
+.epilogue-narrative .history-poster-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.7rem; margin: 1.6rem 0; padding: 0; list-style: none; }
 .epilogue-narrative .history-poster-steps li { position: relative; margin: 0; text-align: center; }
 .history-poster-number { display: inline-grid; place-items: center; width: 2.1em; height: 2.1em; border-radius: 50%; background: var(--ink); color: #fffdf4; font: 900 1.2rem Arial, sans-serif; }
 .history-poster h4 { display: grid; align-content: center; min-height: 3em; margin: .6rem 0; font: 900 1.15rem/1.2 'Arial Narrow', Arial, sans-serif; text-transform: uppercase; }
@@ -95,7 +95,7 @@
 .history-poster-portrait { display: block; min-height: 0; width: auto; height: 100%; max-width: 100%; object-fit: contain; border: .125rem solid var(--ink); }
 .history-poster-steps p { font-size: 1rem; line-height: 1.45; text-align: left; }
 .history-poster-steps li + li::before { content: '➜'; position: absolute; left: -1.6rem; top: 8.5rem; font: 900 1.8rem Arial, sans-serif; color: #777650; }
-.history-poster-moral { padding: .6em; border: .2rem solid #727440; color: #55572b; text-align: center; font: 900 clamp(1rem, 2vw, 1.5rem) Arial, sans-serif; }
+.history-poster-moral { padding: 1em; border: .2rem solid #727440; color: #55572b; text-align: left; font: 700 1.05rem/1.55 Georgia, serif; }
 .history-poster-source { margin-top: 1rem; font: .8rem/1.5 Arial, sans-serif; }
 .hunt .history-poster-source a { color: var(--ink); text-decoration: underline; }
 .bernstein-story-teaser { margin: 1.5rem auto .5rem; padding: 1rem 1.25rem; border: .125rem solid var(--pink); border-radius: .5rem; background: #ff7bc314; text-align: center; }
