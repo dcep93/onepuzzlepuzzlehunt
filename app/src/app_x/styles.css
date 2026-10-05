@@ -76,33 +76,37 @@
 .epilogue-controls { position: fixed; inset: auto 0 0; z-index: 20; display: flex; align-items: center; justify-content: center; gap: 1.5rem; min-height: calc(5.5rem + env(safe-area-inset-bottom, 0rem)); padding: .85rem max(1rem, env(safe-area-inset-right, 0rem)) calc(.85rem + env(safe-area-inset-bottom, 0rem)) max(1rem, env(safe-area-inset-left, 0rem)); border-top: .0625rem solid var(--border); background: rgba(20, 15, 12, .96); backdrop-filter: blur(.75rem); }
 .epilogue-controls p { min-width: 3em; color: var(--tan); text-align: center; font-variant-numeric: tabular-nums; }
 .epilogue-slide-story .epilogue-narrative { width: min(100%, 64rem); }
-.epilogue-stage-story { height: auto; min-height: max(32rem, calc(100svh - 17rem)); }
-.epilogue-slide-story { height: auto; }
-.bernstein-story { display: grid; gap: 1.5rem; }
-.bernstein-story-heading { max-width: 60ch; margin-inline: auto; text-align: center; }
-.bernstein-story-heading p { margin-block: .75rem 1.25rem; }
+.epilogue-stage-story { align-items: start; height: auto; min-height: max(32rem, calc(100svh - 17rem)); }
+.epilogue-slide-story { height: auto; align-content: start; align-self: start; }
+.bernstein-story { display: grid; gap: 1rem; }
+.bernstein-story-heading { width: 100%; text-align: center; }
+.bernstein-reveal-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .25rem .8rem; margin-top: .3rem; }
+.bernstein-reveal-controls p { margin: 0; color: var(--tan); font-size: .9rem; }
+.bernstein-reveal-controls .hunt-button { padding: .4em .8em; min-height: 2.75rem; font-size: .9rem; }
 .history-poster { --ink: #152c43; color: var(--ink); background: #f3efdc; padding: clamp(1.1rem, 3vw, 2.5rem); border: .3rem double var(--ink); outline: .25rem solid #f3efdc; box-shadow: .55rem .55rem 0 #97794d; font-family: Georgia, serif; }
-.history-poster-heading { text-align: center; border-bottom: .2rem solid var(--ink); padding-bottom: 1.25rem; }
-.history-poster-kicker { display: inline-block; border: .125rem solid; padding: .25em .65em; font: 700 .8rem Arial, sans-serif; letter-spacing: .08em; transform: rotate(-2deg); }
-.history-poster h3 { margin: 1rem 0 .75rem; color: var(--ink); font-family: Impact, 'Arial Narrow', sans-serif; font-size: clamp(2rem, 5vw, 4.2rem); line-height: 1.02; letter-spacing: -.025em; }
-.history-poster-subtitle { font: 700 .8rem Arial, sans-serif; letter-spacing: .07em; }
+.history-poster-heading { text-align: center; border-bottom: .125rem solid #aaa78f; padding-bottom: .65rem; }
+.history-poster h3 { margin: 0; color: var(--ink); font: 700 clamp(1.15rem, 2vw, 1.5rem)/1.3 Georgia, serif; }
 .epilogue-narrative .history-poster-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.7rem; margin: 1.6rem 0; padding: 0; list-style: none; }
 .epilogue-narrative .history-poster-steps li { position: relative; margin: 0; text-align: center; }
 .history-poster-number { display: inline-grid; place-items: center; width: 2.1em; height: 2.1em; border-radius: 50%; background: var(--ink); color: #fffdf4; font: 900 1.2rem Arial, sans-serif; }
 .history-poster h4 { display: grid; align-content: center; min-height: 3em; margin: .6rem 0; font: 900 1.15rem/1.2 'Arial Narrow', Arial, sans-serif; text-transform: uppercase; }
-.history-poster-picture { display: block; width: 100%; height: auto; max-height: 9rem; margin: .6rem auto; }
+.history-poster-illustration { display: grid; grid-template-rows: minmax(0, 1fr); place-items: center; height: 9rem; margin: .6rem auto; }
+.history-poster-picture { display: block; width: 100%; height: 100%; }
+.history-poster-portrait { display: block; min-height: 0; width: auto; height: 100%; max-width: 100%; object-fit: contain; border: .125rem solid var(--ink); }
 .history-poster-steps p { font-size: 1rem; line-height: 1.45; text-align: left; }
 .history-poster-steps li + li::before { content: '➜'; position: absolute; left: -1.6rem; top: 8.5rem; font: 900 1.8rem Arial, sans-serif; color: #777650; }
 .history-poster-moral { padding: .6em; border: .2rem solid #727440; color: #55572b; text-align: center; font: 900 clamp(1rem, 2vw, 1.5rem) Arial, sans-serif; }
 .history-poster-source { margin-top: 1rem; font: .8rem/1.5 Arial, sans-serif; }
 .hunt .history-poster-source a { color: var(--ink); text-decoration: underline; }
-.bernstein-story-teaser { margin: 2rem auto .5rem; text-align: center; }
-.bernstein-story-teaser strong { color: var(--pink); }
+.bernstein-story-teaser { margin: 1.5rem auto .5rem; padding: 1rem 1.25rem; border: .125rem solid var(--pink); border-radius: .5rem; background: #ff7bc314; text-align: center; }
+.bernstein-story-teaser p { margin: .3rem 0; }
+.bernstein-story-teaser strong, .bernstein-story-continue { color: var(--pink); }
+.bernstein-story-continue { font: 700 1.4rem var(--display-font); }
 @media (max-width: 50rem) {
   .epilogue-narrative .history-poster-steps { grid-template-columns: 1fr; gap: 2.75rem; }
   .history-poster-steps li { max-width: 25rem; margin-inline: auto; }
   .history-poster h4 { min-height: 0; }
-  .history-poster-picture { max-height: 10rem; }
+  .history-poster-illustration { height: 10rem; }
   .history-poster-steps li + li::before { content: '⬇'; left: calc(50% - .6em); top: -2.3rem; }
 }
 @media (max-width: 35rem) {

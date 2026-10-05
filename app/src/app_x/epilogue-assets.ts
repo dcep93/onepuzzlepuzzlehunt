@@ -28,7 +28,8 @@ export const slides: EpilogueSlide[] = [
   { id: 'overlay-end', images: [{ file: 'overlay_end.png', alt: 'The constellation as a memory aid for the knight and bishop endgame.' }] },
 ]
 
-export const slideImageFiles = [...new Set(slides.flatMap(slide => slide.images.map(image => image.file)))]
+export const bernsteinPortrait = 'ossip-bernstein.jpg'
+export const slideImageFiles = [...new Set([...slides.flatMap(slide => slide.images.map(image => image.file)), bernsteinPortrait])]
 
 // Keep the decoded images alive so every slide is ready before the answer transition.
 const preloadedImages: HTMLImageElement[] = []

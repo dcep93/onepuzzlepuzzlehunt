@@ -1,15 +1,9 @@
-type Scene = 'prison' | 'name' | 'chess' | 'freedom'
+type Scene = 'name' | 'chess' | 'freedom'
 
 // Deliberately simple classroom-poster illustrations; the adjacent text tells the story.
 export default function StoryPicture({ scene }: { scene: Scene }) {
   return (
     <svg className="history-poster-picture" viewBox="0 0 200 135" aria-hidden="true" focusable="false">
-      {scene === 'prison' && <>
-        <rect x="20" y="8" width="160" height="120" fill="#d6d0b8" />
-        <circle cx="100" cy="45" r="20" fill="currentColor" />
-        <path d="M60 125V94a40 40 0 0 1 80 0v31" fill="currentColor" />
-        <path d="M20 12h160M20 125h160M35 12v113M68 12v113M101 12v113M134 12v113M167 12v113" stroke="#657064" strokeWidth="8" />
-      </>}
       {scene === 'name' && <>
         <rect x="34" y="8" width="132" height="119" rx="3" fill="#fffdf4" stroke="currentColor" strokeWidth="4" transform="rotate(-5 100 68)" />
         <path d="M55 32h75M55 44h87M55 92h76M55 104h60" stroke="#aaa78f" strokeWidth="4" />
