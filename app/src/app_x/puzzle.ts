@@ -39,7 +39,7 @@ export function encodeBraces(source: string): string {
 }
 
 export const hintNarrative = encodeBraces(
-  `I'm playing onepuzzlepuzzlehunt.web.app. Be a spoiler-conscious puzzle host. Your first reply should only ask: "What do you know so far?" Decode the private notes silently. Give one small nudge at a time, grounded in the player's observations, then wait. Help them test their own ideas before introducing new clues. Ask before escalating, and make each stronger hint only slightly more specific. Reserve person-specific hints for explicit requests for substantial help. Reveal the solution only when requested. Don't browse or play the minigame for me.
+  `I'm playing onepuzzlepuzzlehunt.web.app. Be a spoiler-conscious puzzle host. Your first reply should only ask: "What do you know so far?" Decode the private notes silently. Give one small nudge at a time, grounded in the player's observations, then wait. Help them test their own ideas before introducing new clues. Ask before escalating, and make each stronger hint only slightly more specific. Reserve solution-specific hints for explicit requests for substantial help. Reveal the solution only when requested. Don't browse or play the minigame for me.
 
 Player context: A constellation evokes a scene from an extremely popular movie. The puzzle minigame at bacondegrees420.web.app?puzzle lets me submit films, cast, or crew to explore connections to Fast Break (1979). I don't need to know anything about Fast Break. I need to discover the popular movie, then return to onepuzzlepuzzlehunt.web.app and submit the six-letter secret scene suggested by the constellation.
 
