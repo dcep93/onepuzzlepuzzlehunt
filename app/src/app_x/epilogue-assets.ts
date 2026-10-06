@@ -24,7 +24,13 @@ export const slides: EpilogueSlide[] = [
   { id: 'morpheus', images: [morpheus] },
   { id: 'morpheus-constellation', images: [{ file: 'pose_constellation.png', alt: 'The constellation overlaid on Morpheus’s pose.' }] },
   { id: 'boxes', images: [{ file: 'boxes.png', alt: 'The constellation’s five points marked with squares over Morpheus’s pose.' }] },
-  { id: 'overlay-start', images: [{ file: 'overlay_start.png', alt: 'Morpheus and the constellation overlaid on a chessboard.' }] },
+  {
+    id: 'overlay-start',
+    images: [
+      { file: 'overlay_start.png', alt: 'Morpheus and the constellation overlaid on a chessboard.' },
+      { file: 'bishop-knight-mating-net.gif', alt: 'The bishop and knight mating net, beginning with Bh7 and ending with Bc6 checkmate.' },
+    ],
+  },
   { id: 'overlay-end', images: [{ file: 'overlay_end.png', alt: 'The constellation as a memory aid for the knight and bishop endgame.' }] },
 ]
 

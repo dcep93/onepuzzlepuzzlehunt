@@ -24,8 +24,9 @@ test('preloads every slide once and waits for the last image to decode', async (
     assert.equal(assets.preloadEpilogue(), pending)
     const files = [...new Set([...assets.slides.flatMap(slide => slide.images.map(image => image.file)), assets.bernsteinPortrait])]
     assert.deepEqual(images.map(image => image.src), files.map(file => `/puzzle/${file}`))
-    assert.equal(images.length, 12)
+    assert.equal(images.length, 13)
     assert.equal(images.filter(image => image.src === '/puzzle/pose.png').length, 1)
+    assert.equal(images.filter(image => image.src === '/puzzle/bishop-knight-mating-net.gif').length, 1)
     images.slice(0, -1).forEach(image => image.resolve())
     await Promise.resolve()
     assert.equal(assets.isEpilogueReady(), false)
@@ -33,7 +34,7 @@ test('preloads every slide once and waits for the last image to decode', async (
     await pending
     assert.equal(assets.isEpilogueReady(), true)
     await assets.preloadEpilogue()
-    assert.equal(images.length, 12)
+    assert.equal(images.length, 13)
   })
 })
 
