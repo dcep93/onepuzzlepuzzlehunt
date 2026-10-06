@@ -13,7 +13,7 @@ export default function Epilogue() {
     setProgress(current => {
       if (direction > 0 && slides[current.slideIndex].id === 'infographic' && current.storyStage !== 'unlocked') return current
       const nextIndex = Math.max(0, Math.min(slides.length - 1, current.slideIndex + direction))
-      return nextIndex === current.slideIndex ? current : { slideIndex: nextIndex, storyStage: 'hidden' }
+      return nextIndex === current.slideIndex ? current : { slideIndex: nextIndex, storyStage: current.storyStage === 'unlocked' ? 'unlocked' : 'hidden' }
     })
   }, [])
   const revealStory = () => setProgress(current => ({ ...current, storyStage: 'revealed' }))
